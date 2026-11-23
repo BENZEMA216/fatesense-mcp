@@ -10,6 +10,12 @@
 </p>
 
 <p align="center">
+  <a href="https://glama.ai/mcp/servers/BENZEMA216/fatesense-mcp">
+    <img width="380" height="200" src="https://glama.ai/mcp/servers/BENZEMA216/fatesense-mcp/badge" alt="fatesense-mcp MCP server" />
+  </a>
+</p>
+
+<p align="center">
   <a href="https://fatesense.app">Live Web Tools (Zero Login)</a> ·
   <a href="https://fatesense.app/tools/bazi-calculator">BaZi Calculator</a> ·
   <a href="https://fatesense.app/tools/bazi-compatibility">BaZi Compatibility</a> ·
