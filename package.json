@@ -1,0 +1,40 @@
+{
+  "name": "fatesense-mcp",
+  "version": "1.0.0",
+  "description": "Deterministic Model Context Protocol (MCP) server for Chinese BaZi (Four Pillars), BaZi Compatibility, True-Lunar Zi Wei Dou Shu (12 Palaces), and Chinese Daily Almanac — powered by tyme4ts & iztro. Built by FateSense (https://fatesense.app).",
+  "type": "module",
+  "bin": {
+    "fatesense-mcp": "./index.js"
+  },
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "node ./test.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "bazi",
+    "four-pillars",
+    "zi-wei-dou-shu",
+    "chinese-astrology",
+    "i-ching",
+    "almanac",
+    "tyme4ts",
+    "iztro",
+    "claude",
+    "cursor",
+    "fatesense"
+  ],
+  "homepage": "https://fatesense.app/mcp",
+  "author": "FateSense (https://fatesense.app)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "iztro": "^2.6.5",
+    "tyme4ts": "^1.5.6",
+    "zod": "^3.24.2"
+  }
+}
