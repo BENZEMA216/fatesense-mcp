@@ -16,6 +16,12 @@
 </p>
 
 <p align="center">
+
+[![BENZEMA216/fatesense-mcp MCP server](https://glama.ai/mcp/servers/BENZEMA216/fatesense-mcp/badges/score.svg)](https://glama.ai/mcp/servers/BENZEMA216/fatesense-mcp)
+
+</p>
+
+<p align="center">
   <a href="https://fatesense.app">Live Web Tools (Zero Login)</a> ·
   <a href="https://fatesense.app/tools/bazi-calculator">BaZi Calculator</a> ·
   <a href="https://fatesense.app/tools/bazi-compatibility">BaZi Compatibility</a> ·
