@@ -1,10 +1,25 @@
 {
   "name": "fatesense-mcp",
+  "mcpName": "io.github.BENZEMA216/fatesense-mcp",
   "version": "1.0.0",
   "description": "Deterministic Model Context Protocol (MCP) server for Chinese BaZi (Four Pillars), BaZi Compatibility, True-Lunar Zi Wei Dou Shu (12 Palaces), and Chinese Daily Almanac — powered by tyme4ts & iztro. Built by FateSense (https://fatesense.app).",
   "type": "module",
+  "main": "./index.js",
   "bin": {
     "fatesense-mcp": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE",
+    "server.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BENZEMA216/fatesense-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BENZEMA216/fatesense-mcp/issues"
   },
   "scripts": {
     "start": "node ./index.js",

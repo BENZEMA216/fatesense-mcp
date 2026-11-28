@@ -53,13 +53,28 @@ Ask any frontier LLM to compute a Chinese BaZi (Four Pillars of Destiny) or Zi W
 | `calculate_bazi_compatibility` | `tyme4ts` | Dual-chart comparison checking Classical Five-Stem Unions (`天干五合`), Spouse Palace Six-Harmony / Six-Clash, and combined Five-Element balance |
 | `calculate_ziwei_astrolabe` | `iztro` | True-lunar Zi Wei Dou Shu 12 Palaces, Five Elements Bureau, Life/Body Master, 14 Major Stars, brightness levels, and Four Transformations |
 | `get_daily_almanac` | `tyme4ts` | Chinese Daily Almanac (*Huangli / Tong Shu*): lunar date, Solar Term, Twelve Duty Officers, 28 Lunar Mansions, and traditional Yi/Ji activities |
-| `lookup_fatesense_knowledge` | `fatesense.app` | Canonical links into FateSense's 450+ page bilingual reference library (60 Jiazi Day Pillars, 10 Gods, 64 I Ching Hexagrams, 60 Fortune Sticks, `/methodology`, `/llms.txt`) |
+| `lookup_fatesense_knowledge` | `fatesense.app` | Canonical links into FateSense's 730+ page bilingual reference library (complete 120-chapter *Qiong Tong Bao Jian* classics, 2027 Chinese Zodiac, 60 Jiazi Day Pillars, 10 Gods, 64 I Ching Hexagrams, 60 Fortune Sticks, `/methodology`, `/llms.txt`) |
 
 ---
 
 ## Quick Start (Claude Desktop / Cursor / Windsurf)
 
-### 1. Clone & Install
+### Option A — Instant Run via `npx` (Recommended once published to npm)
+
+Add this to Claude Desktop (`claude_desktop_config.json`) or Cursor (`mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "fatesense": {
+      "command": "npx",
+      "args": ["-y", "fatesense-mcp"]
+    }
+  }
+}
+```
+
+### Option B — Local Clone & Run
 
 ```bash
 git clone https://github.com/BENZEMA216/fatesense-mcp.git
@@ -67,8 +82,6 @@ cd fatesense-mcp
 npm install
 npm test
 ```
-
-### 2. Add to Claude Desktop (`claude_desktop_config.json`) or Cursor (`mcp.json`)
 
 ```json
 {
@@ -81,7 +94,7 @@ npm test
 }
 ```
 
-### 3. Example Prompts to Try in Claude / Cursor
+### Example Prompts to Try in Claude / Cursor
 
 - *"Calculate my BaZi Four Pillars for 1997-08-18 at 10:30 AM in Taipei (longitude 121.56, UTC+8) using True Solar Time, and explain my Day Master and current Decadal Luck Pillar."*
 - *"Compare BaZi compatibility between 2000-11-20 (15:30) and 1996-05-01 (10:00) using classical stem combinations and Spouse Palace harmony."*
@@ -100,6 +113,8 @@ Every deterministic tool in this MCP server is paired with a free, zero-login we
 - **Chinese Daily Almanac**: https://fatesense.app/tools/daily-almanac ([繁體中文](https://fatesense.app/zh-tw/tools/daily-almanac))
 - **60 Jiazi Fortune Sticks**: https://fatesense.app/tools/daily-fortune-stick
 - **3-Coin I Ching Oracle (64 Hexagrams)**: https://fatesense.app/tools/i-ching-reading
+- **Complete 120-Chapter *Qiong Tong Bao Jian* Classics**: https://fatesense.app/classics/qiong-tong-bao-jian ([繁體中文](https://fatesense.app/zh-tw/classics/qiong-tong-bao-jian))
+- **2027 Fire Goat 12-Zodiac & Tai Sui Hub**: https://fatesense.app/guides/2027-chinese-zodiac ([繁體中文](https://fatesense.app/zh-tw/guides/2027-chinese-zodiac))
 - **Algorithm & Classical Provenance**: https://fatesense.app/methodology
 - **Machine-Readable Site Index**: https://fatesense.app/llms.txt
 

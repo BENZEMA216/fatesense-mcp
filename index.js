@@ -313,16 +313,39 @@ server.tool(
 // 5. FateSense Knowledge Index
 server.tool(
   "lookup_fatesense_knowledge",
-  "Return canonical FateSense bilingual encyclopedia URLs for 60 Jiazi Day Pillars, 10 Gods, 64 I Ching Hexagrams, 60 Fortune Sticks, methodology, and llms.txt.",
+  "Return canonical FateSense bilingual encyclopedia URLs for 60 Jiazi Day Pillars, 10 Gods, 120-chapter Qiong Tong Bao Jian Classics, 2027 Chinese Zodiac, 64 I Ching Hexagrams, 60 Fortune Sticks, methodology, and llms.txt.",
   {
-    topic: z.enum(["overview", "methodology", "pillars", "ten-gods", "i-ching", "fortune-sticks", "gta6"]).default("overview"),
-    slug: z.string().optional().describe("Optional item slug, e.g. 'ren-wu', 'qi-sha', '31-xian-influence'"),
+    topic: z
+      .enum([
+        "overview",
+        "methodology",
+        "classics",
+        "zodiac-2027",
+        "pillars",
+        "ten-gods",
+        "i-ching",
+        "fortune-sticks",
+        "gta6",
+      ])
+      .default("overview"),
+    slug: z
+      .string()
+      .optional()
+      .describe(
+        "Optional item slug, e.g. 'ren-wu', 'qi-sha', 'jia-yin', 'ox', '31-xian-influence'"
+      ),
   },
   async ({ topic, slug }) => {
     const base = "https://fatesense.app";
     const urls = {
       overview: `${base}/llms.txt`,
       methodology: `${base}/methodology`,
+      classics: slug
+        ? `${base}/classics/qiong-tong-bao-jian/${slug}`
+        : `${base}/classics/qiong-tong-bao-jian`,
+      "zodiac-2027": slug
+        ? `${base}/guides/2027-chinese-zodiac/${slug}`
+        : `${base}/guides/2027-chinese-zodiac`,
       pillars: slug ? `${base}/guides/pillars/${slug}` : `${base}/guides#sixty-pillars`,
       "ten-gods": slug ? `${base}/guides/ten-gods/${slug}` : `${base}/guides#ten-gods`,
       "i-ching": slug ? `${base}/guides/i-ching/${slug}` : `${base}/guides#hexagrams`,

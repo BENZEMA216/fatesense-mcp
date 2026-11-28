@@ -1,0 +1,44 @@
+name: Publish to Official MCP Registry
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install & Run Tests
+        run: |
+          npm ci || npm install
+          npm test
+
+      - name: Verify npm package is published
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "Checking npm registry for fatesense-mcp@${VERSION}..."
+          npm view "fatesense-mcp@${VERSION}" version
+
+      - name: Install official mcp-publisher
+        run: |
+          curl -sSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar -xz mcp-publisher
+          chmod +x ./mcp-publisher
+
+      - name: Authenticate via GitHub OIDC & Publish server.json
+        run: |
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
